@@ -1,20 +1,27 @@
+import { MealPlannerPage } from '../pages/meal-planner/meal-planner';
+import { MealPlannerPageModule } from '../pages/meal-planner/meal-planner.module';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
+import { ShoppingListPageModule } from '../pages/shopping-list/shopping-list.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
-  declarations: [MyApp, HomePage, ListPage],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
+  declarations: [MyApp, HomePage],
+  entryComponents: [MyApp, HomePage, ShoppingListPage, MealPlannerPage],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    ShoppingListPageModule,
+    MealPlannerPageModule
+  ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, ListPage, ShoppingListPage],
   providers: [
     StatusBar,
     SplashScreen,
