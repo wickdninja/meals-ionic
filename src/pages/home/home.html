@@ -9,18 +9,9 @@
 
 <ion-content padding>
 
-  <ion-card padding>
+  <ion-card padding *ngFor="let page of pages" (click)="openPage(page)">
     <ion-card-header>
-      Meal Planner
-    </ion-card-header>
-    <ion-card-content>
-      Stuff about the meal planner. Blah blah blah plan some meals yo!
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card padding>
-    <ion-card-header>
-      Shopping List
+      {{page.title}}
     </ion-card-header>
     <ion-card-content>
       Stuff about the shopping list. Blah blah blah get ready to shop!

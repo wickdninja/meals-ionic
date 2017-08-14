@@ -1,3 +1,4 @@
+import { AppPage } from '../models/app-page';
 import { AppPages } from '../app.pages';
 import { MealPlannerPage } from '../pages/meal-planner/meal-planner';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
@@ -35,7 +36,7 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
+  openPage(page: AppPage) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.push(page.component);
