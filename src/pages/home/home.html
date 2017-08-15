@@ -9,13 +9,32 @@
 
 <ion-content padding>
 
-  <ion-card padding *ngFor="let page of pages" (click)="openPage(page)">
+  <ion-card padding (click)="gotoMealPlanner()">
     <ion-card-header>
-      {{page.title}}
+      <ion-icon [name]="mealPlannerPage.icon"></ion-icon>
+      {{mealPlannerPage.title}}
     </ion-card-header>
     <ion-card-content>
-      Stuff about the shopping list. Blah blah blah get ready to shop!
+      {{mealPlannerPage.subtitle}}
     </ion-card-content>
   </ion-card>
+
+  <ion-card padding (click)="gotoShoppingList()">
+    <ion-card-header>
+      <ion-icon [name]="shoppingListPage.icon"></ion-icon>
+      {{shoppingListPage.title}}
+    </ion-card-header>
+    <ion-card-content>
+      {{shoppingListPage.subtitle}}
+    </ion-card-content>
+  </ion-card>
+  <ion-fab bottom right>
+    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab><ion-icon name="share"></ion-icon></button>
+      <button ion-fab><ion-icon name="restaurant"></ion-icon></button>
+      <button ion-fab><ion-icon name="create"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 
 </ion-content>

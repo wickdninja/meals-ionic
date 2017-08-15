@@ -1,12 +1,10 @@
-import { AppPage } from '../models/app-page';
-import { AppPages } from '../app.pages';
-import { MealPlannerPage } from '../pages/meal-planner/meal-planner';
-import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { Nav, Platform } from 'ionic-angular';
 
+import { AppPages } from '../app.pages';
+import { AppPage } from '../models/app-page';
 import { HomePage } from '../pages/home/home';
 
 @Component({
@@ -39,6 +37,6 @@ export class MyApp {
   openPage(page: AppPage) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.push(page.component);
+    this.nav.setRoot(page.component);
   }
 }

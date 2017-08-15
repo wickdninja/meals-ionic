@@ -11,15 +11,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-meal-planner',
-  templateUrl: 'meal-planner.html',
+  templateUrl: 'meal-planner.html'
 })
 export class MealPlannerPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MealPlannerPage');
   }
-
 }

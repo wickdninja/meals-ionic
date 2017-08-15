@@ -2,12 +2,22 @@ export enum Unit {
   // standard
   oz,
   tsp,
-  Tbsp,
+  tbsp,
   cup,
   quart,
   gallon,
+  lbs,
 
   //metric
   pint,
-  liter
+  liter,
+
+  //relative
+  can,
+  jar,
+  box,
+  stick,
+  tub,
+  whole,
+  pack
 }

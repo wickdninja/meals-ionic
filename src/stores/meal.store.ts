@@ -1,13 +1,14 @@
-import { IMealStore } from './imeal.store';
-import { Meal } from '../models/meal';
+import { MockMealData } from '../models/mock-meal-data';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
+
+import { Meal } from '../models/meal';
+import { IMealStore } from './imeal.store';
 
 const DELAY = 500;
 
 @Injectable()
-export class AppPagesService implements IMealStore {
+export class MealStore implements IMealStore {
   private _data = new BehaviorSubject<Meal[]>(null);
   public data = this._data.asObservable();
 
@@ -16,6 +17,6 @@ export class AppPagesService implements IMealStore {
   }
 
   init() {
-    this._data.next(null);
+    this._data.next(MockMealData);
   }
 }
