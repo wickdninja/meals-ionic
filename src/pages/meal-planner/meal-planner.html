@@ -15,5 +15,11 @@
 
 
 <ion-content padding>
-
+  <ion-item-group *ngFor="let meal of store.meals | async as meals; index as i;">
+    <ion-item-divider color="light">
+      {{i}}/{{meals.length}}
+      <ion-icon name="add"></ion-icon>
+    </ion-item-divider>
+    <ion-item>{{meal.title}}</ion-item>
+  </ion-item-group>
 </ion-content>

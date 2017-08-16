@@ -9,14 +9,14 @@ const DELAY = 500;
 
 @Injectable()
 export class MealStore implements IMealStore {
-  private _data = new BehaviorSubject<Meal[]>(null);
-  public data = this._data.asObservable();
+  private _meals = new BehaviorSubject<Meal[]>(null);
+  public meals = this._meals.asObservable();
 
   constructor() {
     setTimeout(() => this.init(), DELAY);
   }
 
   init() {
-    this._data.next(MockMealData);
+    this._meals.next(MockMealData);
   }
 }

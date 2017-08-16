@@ -1,3 +1,5 @@
+import { MealStore } from '../stores/meal.store';
+import { IMealStore } from '../stores/imeal.store';
 import { MealPlannerPage } from '../pages/meal-planner/meal-planner';
 import { MealPlannerPageModule } from '../pages/meal-planner/meal-planner.module';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
@@ -33,7 +35,8 @@ const cloudSettings: CloudSettings = {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: IMealStore, useClass: MealStore }
   ]
 })
 export class AppModule {}

@@ -5,7 +5,7 @@ import { Meal } from '../models/meal';
 
 @Injectable()
 export class IMealStore {
-  data: Observable<Meal[]>;
+  meals: Observable<Meal[]>;
   init() {
     return null;
   }

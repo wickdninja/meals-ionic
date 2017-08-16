@@ -1,5 +1,9 @@
+import { Observable } from 'rxjs/Rx';
+import { Meal } from '../../models/meal';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { IMealStore } from '../../stores/imeal.store';
 
 /**
  * Generated class for the MealPlannerPage page.
@@ -14,7 +18,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'meal-planner.html'
 })
 export class MealPlannerPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  $meals: Observable<Meal[]>;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private store: IMealStore
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MealPlannerPage');
